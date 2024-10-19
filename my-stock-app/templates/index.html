@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis</title>
+</head>
+<body>
+    <h1>Stock Analysis Tool</h1>
+    <form method="POST">
+        <label for="ticker">Enter Stock Ticker:</label>
+        <input type="text" id="ticker" name="ticker" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Only display the image if it's generated -->
+    {% if plot_url %}
+        <h2>Results for {{ ticker }}</h2>
+        <img src="{{ plot_url }}" alt="Generated Plot">
+    {% endif %}
+</body>
+</html>
