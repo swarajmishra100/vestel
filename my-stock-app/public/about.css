@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+}
+
+.container {
+    display: flex; /* Use flexbox for layout */
+}
+
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 110px; /* Initial width */
+    padding: 0 1.7rem;
+    color: #fff;
+    overflow: hidden;
+    transition: width 0.5s linear; /* Smooth transition for width */
+    background: rgba(113, 99, 186, 255);
+}
+
+.sidebar:hover {
+    width: 260px; /* Expanded width on hover */
+}
+
+.logo {
+    height: 80px;
+    padding: 16px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.menu {
+    height: 88%;
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 8px;
+}
+
+.menu li:hover,
+.active {
+    background: #e0e0e058;
+}
+
+.menu a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.main--content {
+    flex-grow: 1; /* Allow this section to grow and take available space */
+    background: #ebe9e9; /* Background color for main content */
+    padding: 1rem; /* Padding around main content */
+}
+
+/* Additional styles for header, creator cards, etc. remain unchanged */

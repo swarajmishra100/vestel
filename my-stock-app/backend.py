@@ -16,7 +16,6 @@ class backend:
     pass
 
   def run(self, algo):
-
     for day in algo.ticker.index:
       algo.decide("AAPL", day)
       self.portfolio_value.append(algo.getCurrVal(day))

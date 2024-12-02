@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../icons/biomejs-icon.svg" alt="Alternative Icon JS" style="width: 45px; height: auto; margin-left: -10px;">
+        </div>
+        <ul class="menu">
+            <li class="active">
+                <a href="#">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analysis</span>
+                </a>
+            </li>
+            <li>
+                <!--  About the Creators!  -->
+                  <a href="about.html">
+                    <i class="fas fa-users"></i>
+                    <span>About</span>
+                  </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content, Ken Styled -->
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>Primary</span>
+                <h2>Stock Analysis Tool</h2>
+            </div>
+            <div class="user--info">
+                <div class="search--box">
+                    <i class="fa-solid fa-search" aria-hidden="true"></i>
+                    <input type="text" placeholder="Search stocks">
+                </div>
+            </div>
+        </div>
+
+        <div class="card--container">
+            <h3 class="main--title">Analyze Stock</h3>
+            <div class="card--wrapper">
+                <form method="POST" class="stock-form">
+                    <div class="input-wrapper">
+                        <input type="text" id="ticker" name="ticker" required class="input-field" placeholder=" ">
+                        <label for="ticker" class="input-label">Enter Stock Ticker</label>
+                    </div>
+                    <div class="button-wrapper">
+                        <button type="submit" class="submit-button">
+                            <span>Analyze</span>
+                        </button>
+                        <button type="button" class="clear-button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+        <div class="tabular--wrapper">
+            <h3 class="main--title">Results for {{ ticker }}</h3>
+            <div class="table--container">
+                <img src="{{ plot_url }}" alt="Generated Plot" class="result-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

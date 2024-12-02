@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Stock Analysis Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex; 
+        }
+
+        .main--content {
+            flex-grow: 1;
+            background: #ebe9e9;
+            padding: 20px;
+        }
+
+        .creators-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .creator-card {
+          background: #f9f9f9;
+          border-radius: 10px;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+          transform: scale(1);
+        } 
+
+        .creator-card:hover {
+          transform: scale(1.02);
+        }
+        .creator-image {
+            width: 100px;
+            height: auto; 
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        .creator-image:hover {
+            animation: shake 0.5s linear infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        h3 {
+            color: rgba(113, 99, 186, 255);
+        }
+        .personal--header {
+          color: rgba(113, 99, 186, 255);
+          font-size: 12px;;
+        }
+        .sub--header--frame {
+          max-width: 500px;
+          margin: 0 auto; /* Centers the frame horizontally */
+          text-align: center; /* Centers the text inside the frame */
+          padding: 10px; /* Adjusted padding for consistent spacing */
+        }
+
+        .sub--header {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../icons/biomejs-icon.svg" alt="Alternative Icon JS" style="width: 45px; height:auto; margin-left: -10px">
+        </div>
+        <ul class="menu">
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analysis</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="about.html">
+                    <i class="fas fa-users"></i>
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-history"></i>
+                    <span>History</span>
+                </a>
+            </li>
+             <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+             </li>
+         </ul>
+     </div>
+
+    <!-- Main Content -->
+    <div class="main--content">
+      <div class="header--wrapper">
+        <div class="header--title">
+            <span>About Us</span>
+            <h2>Meet Us 🤝 </h2>
+        </div>
+    </div>
+
+         <!-- Creator Card Section -->
+         <div class="creators-container">
+             <!-- Card for Drawls -->
+             <div class="creator-card">
+                 <img src="../icons/default-icon.webp" alt="Swaraj" class="creator-image"> <!-- Replace with actual image path -->
+                 <h3>Swaraj Mishra</h3>
+                 <p class="personal--header">| B.Sc., Data Science |</p>
+                 <div class="sub--header--frame">
+                    <p class="sub--header">I'm studying data science & math, I enjoy studying a varying range of topics </p>
+                 </div>
+             </div>
+             <!-- Creator Card for SK -->
+             <div class="creator-card">
+                 <img src="../icons/default-icon.webp" alt="Ken" class="creator-image"> <!-- Replace with actual image path -->
+                 <h3>Ken Fukutomi</h3>
+                 <p class="personal--header">| B.Sc., Computer Science | </p>
+                 <div class="sub--header--frame">
+                    <p class="sub--header">I'm a fullstack developer capable of using modern web frameworks [ADD</p>
+                 </div>
+             </div>
+         </div>
+         <!-- I Fixed the Spacing and Sidebar Issue(s). -->
+
+     </div>
+     <script src="script.js"></script>
+
+</body>
+</html>

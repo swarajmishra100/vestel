@@ -13,10 +13,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        # Get stock ticker from our form input
         ticker = request.form.get("ticker", "AAPL").upper()
-
-        # Run algorithm w/ input ticker
         tester = backend()
         algo = algorithm(ticker)
         tester.run(algo)
@@ -35,7 +32,6 @@ def index():
         return send_file(img, mimetype='image/png', as_attachment=False)
 
     return render_template("index.html", plot_url=None, ticker=None)
-
 
 if __name__ == "__main__":
     app.run(debug=False)
