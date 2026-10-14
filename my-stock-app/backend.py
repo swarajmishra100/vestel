@@ -87,3 +87,13 @@ class backend:
     our_return = ((end_val / start_val) - 1)*100
     print(f"Our Return Over Time Period: {np.round(our_return, 2)}%")
     print(f"Performance compared to Market: {np.round(our_return - market_return, 2)}%")
+  def risk_metrics(self, algorithm):
+    # Risk-adjusted performance from daily portfolio values (risk-free rate = 0)
+    pv = pd.Series(algorithm.portfolio_vals)
+    r = pv.pct_change().dropna()
+    ann_vol = r.std() * np.sqrt(252)
+    sharpe = r.mean() / r.std() * np.sqrt(252)
+    max_dd = (pv / pv.cummax() - 1).min()
+    print(f"Annualized Volatility: {ann_vol:.1%}")
+    print(f"Sharpe Ratio: {sharpe:.2f}")
+    print(f"Max Drawdown: {max_dd:.1%}")

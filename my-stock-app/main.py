@@ -31,6 +31,7 @@ tester.graphReturns(algo)
 tester.graphRSI(algo)
 tester.calculate_total_returns(algo)
 tester.calculate_market_return(algo)
+tester.risk_metrics(algo)
 
 # Adjust layout and display the plots
 plt.tight_layout()
