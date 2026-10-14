@@ -16,7 +16,7 @@ class algorithm:
   SPY = "SPY"
   
   # Download market data for SPY
-  market_ticker = yf.download(SPY, start_date, end_date, progress=False)
+  market_ticker = yf.download(SPY, start_date, end_date, progress=False, multi_level_index=False)
   
   # Initialize lists for technical indicators and trade history
   fourteen_day_ma = []  # Moving Average over 14 days
@@ -33,7 +33,7 @@ class algorithm:
   def __init__(self, tick):
     # Download data for the provided ticker symbol
     self.ticker_symbols = tick
-    self.ticker = yf.download(self.ticker_symbols, self.start_date, self.end_date, progress=False)
+    self.ticker = yf.download(self.ticker_symbols, self.start_date, self.end_date, progress=False, multi_level_index=False)
     return # Base initialization
 
   # Function to execute a buy trade
