@@ -67,7 +67,7 @@ class algorithm:
     total_gain = 0
     for i in self.fourteen_day_ma:
       if i > 0:
-        total_gain += 1
+        total_gain += i  # sum gain magnitudes (was += 1, which counted up-days)
     
     if self.RSI_day_count > 14:
       self.RSI_day_count = 14  # Keep the day count at 14
